@@ -1,0 +1,411 @@
+/* Gaya untuk smartphone (lebar layar kurang dari 768px) */
+    #menu-toggle {
+        display: none; /* Sembunyikan tombol menu hamburger secara default */
+    }
+    
+    #nav-menu {
+        display: block; /* Tampilkan menu secara default */
+    }
+    
+    /* Tampilan menu dropdown untuk smartphone (lebar layar < 768px) */
+    @media (max-width: 767px) {
+        .logo_main{
+            width: 40px;
+            height: 53px;
+        }
+
+        .logo_center{
+            margin-bottom: 17px;
+            width: 190px;
+            height: 27px;
+        }
+        .logo_03{
+            width: 100px;
+            height: auto;
+        }
+
+        #menu-toggle {
+            display: block; /* Tampilkan tombol menu hamburger */
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            z-index: 99;
+            background: whitesmoke;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        header nav a{
+            padding: 10px;
+            color: #2c3e50;
+            height: 16px;
+            width: auto;
+            font-size: 16px;
+        }
+
+        #nav-menu {
+            position: absolute;
+            top: 45px;
+            background-color: whitesmoke;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+            opacity: 0; /* Awalnya, set opasitas ke 0 untuk menyembunyikan menu */
+            z-index: -99;
+            transform: translateY(-5px); /* Mulai dengan posisi di luar tampilan */
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
+            /*Sembunyikan menu saat tampilan smartphone */
+        }
+    
+        #nav-menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        #nav-menu ul li {
+            margin: 10px 0;
+        }
+    
+        /* Tampilkan menu saat tombol menu hamburger diklik */
+        #menu-toggle.active + #nav-menu {
+            opacity: 1; /* Saat aktif, set opasitas ke 1 untuk menampilkan menu */
+            z-index: 10;
+            transform: translateY(0); /* Geser menu ke posisi yang benar saat aktif */
+        }
+        .allmargin_bottom{
+            margin-bottom: 50px;
+        }
+        
+        .title{
+            font-size: 22px;
+            padding: 5px;
+        }
+
+        .title_child{
+            font-size: 16px;
+        }
+
+        #key_visual .main_image img{
+            margin-top: 10%;
+            width: 100%;
+            height: auto;
+        }
+        
+        #concept{
+            margin-bottom: 30px;
+            padding: 20px 10px 10px 10px;
+        }
+
+        #concept p{
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        #concept li p{
+            font-size: 10px;
+            padding-left: 40px;
+        }
+        
+        #concept span{
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        #concept ul{
+            margin-bottom: 30px;
+        }
+        
+        #concept li{
+            padding: 5px;
+            font-size: 18px;
+        }
+
+        .facility {
+            padding: 10px; /* Mengurangi padding pada perangkat seluler */
+        }
+
+        .offerGH{
+            width: 85%;
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        .offer_title{
+            font-size: 14px;
+            line-height: 30px;
+            margin-top: -50px;
+        }
+        .ghcost {
+            margin-top: -140px;
+            width: 110%;
+          }
+        .ghcostbtn {
+            left: 50%;
+            margin-bottom: 50px;
+          }
+        #ghbtntext {
+            padding: 10px 40px;
+            font-size: 10px;
+          }
+        .offerKan{
+            top: -230px;
+            width: 85%;
+            height: 220px;
+            margin-bottom: 50px;
+        }
+        .kancost2 {
+            margin-top: -400px;
+            width: 110%;
+          }
+        .kancostbtn {
+            left: 50%;
+            margin-bottom: 70px;
+          }
+        #kanbtntext {
+            padding: 10px 40px;
+            font-size: 10px;
+          }
+    
+        .facility table tr td {
+            border: 1px black solid;
+            padding: 2px;
+            font-size: 2vw; /* Mengurangi ukuran font pada perangkat seluler */
+        }
+
+        .facility .tab02{
+            width: 50%;
+        }
+
+        .facility .tab04{
+            font-size: 2vw;
+        }
+    
+        .facility .textarea1, .facility .textarea2 {
+            width: 40%; /* Menyesuaikan lebar textarea pada perangkat seluler */
+        }
+    
+        .facility .main {
+            padding: 0 20px; /* Mengurangi padding pada perangkat seluler */
+        }
+    
+        .facility .main img {
+            width: 100%; /* Menyesuaikan lebar gambar pada perangkat seluler */
+            height: auto; /* Menyesuaikan tinggi gambar secara otomatis */
+        }
+
+        #serviceplan p{
+            padding: 5px 15px;
+            font-size: 13px;
+        }
+
+        #footer {
+            padding: 0;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            font-size: small;
+        }
+    
+        #footer table {
+            width: 90%; /* Menyesuaikan lebar tabel pada perangkat seluler */
+        }
+    
+        #footer td {
+            padding: 0px;
+            width: 20%; /* Menyesuaikan lebar sel-sel pada perangkat seluler */
+        }
+        #footer .hide{
+            display: none;
+        }
+
+        #footer .copyright{
+            padding: 10px;
+            font-size: x-small;
+        }
+
+        #footer .footer-links ul {
+            padding: 10px 0;
+        }
+
+        .column .text01, .column-2 .text01{
+            font-size: 8vw;
+            top: 0px;
+            padding: 25px 0;
+            z-index: 2;
+        }
+
+        .column .img{
+            bottom: 180px;
+            width: 65%;
+        }
+
+        .column p, .column-2 p{
+            font-size: 3vw;
+            top: 50px;
+         }
+        
+        #slidbtntext{
+            font-size: small;
+        }
+        #tegbtntext{
+            font-size: small;
+        }
+        .tegviewer{
+            width: 100%;
+        }
+        .tegviewer img{
+            height: 430px;
+        }
+
+        .slider1 img{
+            display: none;
+        }
+        .slider2 img{
+            width: 85%;
+            height: 200px;
+        }
+        
+
+        .slidersora img{
+            width: auto;
+            height: 250px;
+        }
+        .slidersora_msg {
+            bottom: -80px;
+            margin-bottom: -50px;
+            margin-left: 65%;
+            z-index: 2;
+        }
+        .txtslidersora{
+            font-size: 7px;
+            margin-bottom: -80px;
+            bottom: -20px;
+            margin-left: 40%;
+            z-index: 3;
+        }
+        .slidersora_msg img {
+            width: 100px;
+            height: auto;
+           }
+        
+
+        #swiper {
+            display: block;
+            width: 100%;
+            height: 200px;
+          }
+        .swiper-slide {
+            text-align: center;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        #swipebehinder{
+            position: relative;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+
+        /* slick Button Customize */
+        .slick-prev {
+            left: -40px;
+        }
+        .slick-next {
+            right: -40px;
+        }
+        
+        .slick-prev:before,
+        .slick-next:before
+        {
+            font-size: 8vw;
+            opacity: .9;
+        }
+
+         .gmaps{
+            padding: 0;
+            width: 100%;
+            height: 300px;
+        }
+
+        #companny td {
+            padding: 10px;
+            line-height: 15px;
+            font-size: small;
+        }
+
+        .offer{
+            width: 80%;
+            height: 200px;
+        }
+
+        .offer img{
+            width: 132px;
+            height: 21px;
+        }
+
+        .offtext{
+            text-align: center;
+            font-size: 10px;
+            left: 60%;
+            top: 14%;
+            width: 190px;
+            height: 180px;
+        }
+
+        .offbtn {
+            left: 75%;
+            bottom: 70px;
+            padding: 7px 25px;
+            font-size: 10px;
+          }
+
+        #survice{
+            padding-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #guide img{
+            padding: 10px;
+            width: 90px;
+            height: 90px;
+        }
+        #guide .textarea2{
+            font-size: 13px;
+        }
+        .job_info p{
+            padding: 14px;
+            font-size: 15px;
+        }
+
+        #callbtn {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 99;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            background-image: url(../images/tel5.png);
+            box-shadow: -3px 3px 10px 1px rgba(0,0,0,0.37);
+            border-radius: 50%;
+            line-height: 60px; /* Tinggi garis sesuai dengan tinggi tombol */
+            text-align: center; 
+            color: whitesmoke;
+        }
+
+    }

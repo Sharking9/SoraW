@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="check.js" defer></script>
+</head>
+<body>
+    <h1>Dashboard Admin</h1>
+    <p>Selamat datang, Admin!</p>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="fileInput" accept="image/*">
+        <button onclick="uploadPhoto()">Upload Photo</button>
+
+    <!-- Konten dashboard lainnya -->
+    <br><br>
+    <button id="logoutBtn">Logout</button>
+
+</body>
+<footer>
+    <script>
+        function uploadPhoto() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            // Handle response
+            console.log('File uploaded successfully');
+        })
+        .catch(error => {
+            // Handle error
+            console.error('Error uploading file:', error);
+        });
+    }
+}
+
+
+    </script>
+</footer>
+</html>
+    
