@@ -5,50 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <script src="check.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/stylemobile.css" />
 </head>
 <body>
     <h1>Dashboard Admin</h1>
     <p>Selamat datang, Admin!</p>
 
-    <form id="uploadForm" enctype="multipart/form-data">
-        <input type="file" id="fileInput" accept="image/*">
+    <form id="uploadForm01" enctype="multipart/form-data">
+        <input type="file" id="fileInput01" accept="image/*">
         <button type="submit">Upload Photo</button>
     </form>
+    <form id="uploadForm02" enctype="multipart/form-data">
+        <input type="file" id="fileInput02" accept="image/*">
+        <button type="submit">Upload Photo</button>
+    </form>
+
+    <section class="b">
+        <div class="container tegami">
+            <div>
+                <img src="uploads/tegami01.png" height="400px" width="200px" alt="soraからの手紙 1">
+            </div>
+            <div>
+                <img src="uploads/tegami02.png" height="400px" width="200px" alt="soraからの手紙 2">
+            </div>
+        </div>
+    </section>
 
     <!-- Konten dashboard lainnya -->
     <br><br>
     <button id="logoutBtn">Logout</button>
 
-</body>
-<footer>
     <script>
-        document.getElementById('uploadForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Menghentikan pengiriman form bawaan
+        document.getElementById('uploadForm01').addEventListener('submit', function(event) {
+            event.preventDefault(); // Menghentikan pengiriman form bawaan
 
-    const fileInput = document.getElementById('fileInput');
-    const file = fileInput.files[0];
+            const fileInput = document.getElementById('fileInput01'); // Gunakan ID yang sesuai
+            const file = fileInput.files[0];
 
-    if (file) {
-        const formData = new FormData();
-        formData.append('file', file);
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
 
-        fetch('upload.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            // Handle response
-            console.log('File uploaded successfully');
-        })
-        .catch(error => {
-            // Handle error
-            console.error('Error uploading file:', error);
+                fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    // Handle response
+                    console.log('File uploaded successfully');
+                    // Muat ulang halaman setelah upload selesai
+                    location.reload();
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error uploading file:', error);
+                });
+            }
         });
-    }
-});
 
+        document.getElementById('uploadForm02').addEventListener('submit', function(event) {
+            event.preventDefault(); // Menghentikan pengiriman form bawaan
 
+            const fileInput = document.getElementById('fileInput02'); // Gunakan ID yang sesuai
+            const file = fileInput.files[0];
+
+            if (file) {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('upload.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    // Handle response
+                    console.log('File uploaded successfully');
+                    // Muat ulang halaman setelah upload selesai
+                    location.reload();
+                })
+                .catch(error => {
+                    // Handle error
+                    console.error('Error uploading file:', error);
+                });
+            }
+        });
     </script>
-</footer>
+</body>
 </html>
-    
