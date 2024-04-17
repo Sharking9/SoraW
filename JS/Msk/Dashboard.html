@@ -10,9 +10,10 @@
     <h1>Dashboard Admin</h1>
     <p>Selamat datang, Admin!</p>
 
-        <label for="image">Upload Image:</label>
+    <form id="uploadForm" enctype="multipart/form-data">
         <input type="file" id="fileInput" accept="image/*">
-        <button onclick="uploadPhoto()">Upload Photo</button>
+        <button type="submit">Upload Photo</button>
+    </form>
 
     <!-- Konten dashboard lainnya -->
     <br><br>
@@ -21,7 +22,9 @@
 </body>
 <footer>
     <script>
-        function uploadPhoto() {
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Menghentikan pengiriman form bawaan
+
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
 
@@ -42,7 +45,7 @@
             console.error('Error uploading file:', error);
         });
     }
-}
+});
 
 
     </script>
